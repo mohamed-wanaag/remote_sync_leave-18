@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Leave Sync Configuration Form -->
+    <record id="view_leave_sync_config_form" model="ir.ui.view">
+        <field name="name">leave.sync.config.form</field>
+        <field name="model">leave.sync.config</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="test_connection" string="Test Connection" 
+                            type="object" class="btn-primary"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="config_name"/>
+                            <!-- <field name="is_active"/> -->
+                            <!-- <field name="sync_direction"/> -->
+                        </group>
+                        <!-- <group>
+                            <field name="sync_on_request"/>
+                            <field name="sync_on_approve"/>
+                            <field name="sync_on_refuse"/>
+                        </group> -->
+                    </group>
+                    
+                    <group string="Remote Database Configuration (OdooRPC)">
+                        <group>
+                            <field name="sync_db_host" placeholder="remote-odoo.example.com"/>
+                            <!-- <field name="sync_db_port"/>
+                            <field name="sync_db_protocol"/> -->
+                        </group>
+                        <group>
+                            <field name="sync_db_name" placeholder="production_db"/>
+                            <field name="sync_db_user"/>
+                            <field name="sync_db_password" password="True"/>
+                        </group>
+                    </group>
+                    
+                    <!-- <group string="Advanced Options"> -->
+                        <!-- <group>
+                            <field name="auto_approve_remote"/>
+                            <field name="sync_attachments"/>
+                        </group> -->
+                        <!-- <group>
+                            <field name="timeout"/>
+                        </group> -->
+                    <!-- </group> -->
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Leave Sync Configuration Tree -->
+    <record id="view_leave_sync_config_tree" model="ir.ui.view">
+        <field name="name">leave.sync.config.list</field>
+        <field name="model">leave.sync.config</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="config_name"/>
+                <field name="is_active" widget="boolean_toggle"/>
+                <!-- <field name="sync_direction"/> -->
+                <field name="sync_db_host"/>
+                <field name="sync_db_name"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Employee Form - Add Remote ID -->
+    <record id="view_employee_form_inherit_leave_sync" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.leave.sync</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <field name="department_id" position="after">
+                <field name="remote_employee_id" groups="hr.group_hr_manager"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Leave Type Form - Add Remote ID and Fetch Button -->
+    <record id="view_leave_type_form_inherit_sync" model="ir.ui.view">
+        <field name="name">hr.leave.type.form.inherit.sync</field>
+        <field name="model">hr.leave.type</field>
+        <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="before">
+                <header>
+                    <button name="action_fetch_remote_leave_types" 
+                            string="Fetch Remote Leave Types" 
+                            type="object" 
+                            class="btn-secondary"
+                            groups="hr_holidays.group_hr_holidays_manager"/>
+                </header>
+            </xpath>
+            <field name="name" position="after">
+                <field name="remote_leave_type_id" groups="hr_holidays.group_hr_holidays_manager"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Leave Form - Add Sync Info and Buttons -->
+    <record id="view_leave_form_inherit_sync" model="ir.ui.view">
+        <field name="name">hr.leave.form.inherit.sync</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Add sync buttons in header -->
+            <xpath expr="//form" position="inside">
+                <field name="remote_leave_visible" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//form/header" position="inside">
+                <!-- <button name="action_manual_sync"
+                        string="Push to Remote"
+                        type="object"
+                        class="btn-secondary"
+                        invisible="state in ['cancel', 'refuse']"/> -->
+
+                <!-- <button name="action_pull_from_remote"
+                        string="Pull from Remote"
+                        type="object"
+                        class="btn-secondary"
+                        invisible="not remote_leave_visible"
+                        groups="hr_holidays.group_hr_holidays_manager"/> -->
+
+                <button name="action_view_remote_leave"
+                        string="View on Remote"
+                        type="object"
+                        class="btn-link"
+                        invisible="not remote_leave_visible"
+                        groups="hr_holidays.group_hr_holidays_manager"/>
+            </xpath>
+
+            
+            
+            <!-- Add sync status alert -->
+            <xpath expr="//sheet" position="inside">
+                <div class="alert alert-info"
+                    invisible="sync_status in ['synced', 'not_synced']">
+                    <strong>Sync Status:</strong>
+                    <field name="sync_status" widget="badge"
+                        decoration-success="sync_status == 'synced'"
+                        decoration-warning="sync_status == 'syncing'"
+                        decoration-danger="sync_status == 'failed'"/>
+                    <field name="sync_error_message"
+                        invisible="not sync_error_message"/>
+                </div>
+            </xpath>
+
+            
+            <!-- Add sync fields - using a safer XPath -->
+            <xpath expr="//group[@name='col_left']" position="inside">
+                <group string="Sync Information (OdooRPC)"
+                    groups="hr_holidays.group_hr_holidays_manager">
+                    <field name="remote_leave_id" readonly="1"/>
+                    <field name="sync_status" widget="badge"
+                        decoration-success="sync_status == 'synced'"
+                        decoration-warning="sync_status == 'syncing'"
+                        decoration-danger="sync_status == 'failed'"/>
+                    <field name="last_sync_date" readonly="1"/>
+                </group>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Leave Tree - Add Sync Status -->
+    <record id="view_leave_tree_inherit_sync" model="ir.ui.view">
+        <field name="name">hr.leave.list.inherit.sync</field>
+        <field name="model">hr.leave</field>
+        <field name="inherit_id" ref="hr_holidays.hr_leave_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="state" position="after">
+                <field name="sync_status" widget="badge" optional="show"
+                       decoration-success="sync_status == 'synced'"
+                       decoration-warning="sync_status == 'syncing'"
+                       decoration-danger="sync_status == 'failed'"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
