@@ -1,0 +1,426 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Remote Leave Management Sync</h2>
+        <h3 class="oe_slogan">Seamlessly synchronize employee leave requests across multiple Odoo instances</h3>
+        <div class="oe_demo oe_picture oe_screenshot">
+            <img src="banner.png" alt="Remote Leave Sync Banner">
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan" style="color:#875A7B;">Why Remote Leave Sync?</h2>
+            <p class="oe_mt32 text-center" style="font-size: 18px;">
+                Managing employee leave across multiple Odoo databases can be challenging. 
+                Our <strong>Remote Leave Management Sync</strong> module provides a robust, automated solution 
+                for organizations with distributed HR operations, multiple branches, or separate production and 
+                central databases.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">✨ Key Features</h2>
+        <div class="oe_span6">
+            <div class="oe_picture">
+                <img src="feature_auto_sync.png" alt="Automatic Synchronization">
+            </div>
+            <h3 class="oe_mb16">🔄 Automatic Synchronization</h3>
+            <p class="oe_mb32">
+                Leave requests are automatically synced to your remote database in real-time. 
+                No manual intervention required! Configure sync triggers for:
+            </p>
+            <ul>
+                <li>Leave request creation</li>
+                <li>Leave approval</li>
+                <li>Leave refusal</li>
+                <li>Date/duration modifications</li>
+            </ul>
+        </div>
+        <div class="oe_span6">
+            <div class="oe_picture">
+                <img src="feature_bidirectional.png" alt="Bidirectional Sync">
+            </div>
+            <h3 class="oe_mb16">↔️ Bidirectional Sync Support</h3>
+            <p class="oe_mb32">
+                Choose your sync direction based on your needs:
+            </p>
+            <ul>
+                <li><strong>Local → Remote:</strong> Push leave data to central database</li>
+                <li><strong>Remote → Local:</strong> Pull leave data from central database</li>
+                <li><strong>Bidirectional:</strong> Keep both databases perfectly in sync</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <div class="oe_picture">
+                <img src="feature_status.png" alt="Sync Status Tracking">
+            </div>
+            <h3 class="oe_mb16">📊 Real-Time Sync Status</h3>
+            <p class="oe_mb32">
+                Monitor synchronization status directly from the leave form:
+            </p>
+            <ul>
+                <li>Visual status badges (Synced, Syncing, Failed, Not Synced)</li>
+                <li>Detailed error messages for troubleshooting</li>
+                <li>Last sync timestamp</li>
+                <li>Remote leave ID tracking</li>
+            </ul>
+        </div>
+        <div class="oe_span6">
+            <div class="oe_picture">
+                <img src="feature_odoorpc.png" alt="OdooRPC Technology">
+            </div>
+            <h3 class="oe_mb16">⚡ Powered by OdooRPC</h3>
+            <p class="oe_mb32">
+                Built with modern OdooRPC library for superior performance:
+            </p>
+            <ul>
+                <li>Clean, Pythonic code architecture</li>
+                <li>Efficient session management</li>
+                <li>Robust error handling</li>
+                <li>Faster than traditional XML-RPC</li>
+                <li>Easy to maintain and extend</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">🎯 Perfect For</h2>
+        <div class="oe_span4">
+            <div class="text-center">
+                <i class="fa fa-building fa-3x" style="color:#875A7B;"></i>
+                <h3 class="oe_mt16">Multi-Branch Organizations</h3>
+                <p class="oe_mt16">
+                    Centralize leave management across multiple branches while maintaining 
+                    local Odoo instances for day-to-day operations.
+                </p>
+            </div>
+        </div>
+        <div class="oe_span4">
+            <div class="text-center">
+                <i class="fa fa-database fa-3x" style="color:#875A7B;"></i>
+                <h3 class="oe_mt16">Separate Databases</h3>
+                <p class="oe_mt16">
+                    Keep production and HR databases separate while ensuring leave data 
+                    stays synchronized automatically.
+                </p>
+            </div>
+        </div>
+        <div class="oe_span4">
+            <div class="text-center">
+                <i class="fa fa-globe fa-3x" style="color:#875A7B;"></i>
+                <h3 class="oe_mt16">Distributed Teams</h3>
+                <p class="oe_mt16">
+                    Manage geographically distributed teams with local databases that 
+                    sync to a central HR system.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">🚀 How It Works</h2>
+        <div class="oe_span12">
+            <div class="oe_picture">
+                <img src="workflow_diagram.png" alt="Sync Workflow">
+            </div>
+        </div>
+        <div class="oe_span12 oe_mt32">
+            <div class="oe_row_img oe_centered">
+                <div class="oe_span4">
+                    <h3>1️⃣ Configure Connection</h3>
+                    <p>
+                        Set up remote database credentials (host, port, database name, username, password). 
+                        Test connection with one click.
+                    </p>
+                </div>
+                <div class="oe_span4">
+                    <h3>2️⃣ Map Records</h3>
+                    <p>
+                        Link local employees and leave types to their remote counterparts using 
+                        simple ID mappings.
+                    </p>
+                </div>
+                <div class="oe_span4">
+                    <h3>3️⃣ Automatic Sync</h3>
+                    <p>
+                        Leave requests automatically sync in real-time. Monitor status, pull updates, 
+                        or push changes manually when needed.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">💡 Smart Features</h2>
+        <div class="oe_span6">
+            <ul class="fa-ul">
+                <li class="oe_mb16">
+                    <i class="fa-li fa fa-check-square" style="color:#00A09D;"></i>
+                    <strong>Auto-Approve on Remote:</strong> Automatically approve synced leave on remote database
+                </li>
+                <li class="oe_mb16">
+                    <i class="fa-li fa fa-check-square" style="color:#00A09D;"></i>
+                    <strong>Manual Sync Button:</strong> Push or pull leave data on-demand
+                </li>
+                <li class="oe_mb16">
+                    <i class="fa-li fa fa-check-square" style="color:#00A09D;"></i>
+                    <strong>View on Remote:</strong> Quick link to view leave on remote database
+                </li>
+                <li class="oe_mb16">
+                    <i class="fa-li fa fa-check-square" style="color:#00A09D;"></i>
+                    <strong>Fetch Remote Leave Types:</strong> Discover available leave types on remote
+                </li>
+            </ul>
+        </div>
+        <div class="oe_span6">
+            <ul class="fa-ul">
+                <li class="oe_mb16">
+                    <i class="fa-li fa fa-check-square" style="color:#00A09D;"></i>
+                    <strong>Configurable Timeout:</strong> Set connection timeout for slow networks
+                </li>
+                <li class="oe_mb16">
+                    <i class="fa-li fa fa-check-square" style="color:#00A09D;"></i>
+                    <strong>SSL Support:</strong> Secure connections with JSON-RPC+SSL
+                </li>
+                <li class="oe_mb16">
+                    <i class="fa-li fa fa-check-square" style="color:#00A09D;"></i>
+                    <strong>Error Recovery:</strong> Failed syncs don't break workflow
+                </li>
+                <li class="oe_mb16">
+                    <i class="fa-li fa fa-check-square" style="color:#00A09D;"></i>
+                    <strong>Comprehensive Logging:</strong> Detailed logs for troubleshooting
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">📸 Screenshots</h2>
+        <div class="oe_span6">
+            <div class="oe_picture">
+                <img src="screenshot_config.png" alt="Configuration Screen">
+            </div>
+            <p class="oe_mt16 text-center"><strong>Sync Configuration Screen</strong></p>
+        </div>
+        <div class="oe_span6">
+            <div class="oe_picture">
+                <img src="screenshot_leave.png" alt="Leave Form with Sync">
+            </div>
+            <p class="oe_mt16 text-center"><strong>Leave Form with Sync Status</strong></p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">🔒 Security & Reliability</h2>
+        <div class="oe_span4">
+            <div class="text-center">
+                <i class="fa fa-shield fa-3x" style="color:#875A7B;"></i>
+                <h3 class="oe_mt16">Secure Connection</h3>
+                <p class="oe_mt16">
+                    Credentials are encrypted and stored securely. Supports SSL/TLS for 
+                    encrypted data transmission.
+                </p>
+            </div>
+        </div>
+        <div class="oe_span4">
+            <div class="text-center">
+                <i class="fa fa-life-ring fa-3x" style="color:#875A7B;"></i>
+                <h3 class="oe_mt16">Fault Tolerant</h3>
+                <p class="oe_mt16">
+                    Failed syncs don't prevent leave operations. Retries can be triggered 
+                    manually without data loss.
+                </p>
+            </div>
+        </div>
+        <div class="oe_span4">
+            <div class="text-center">
+                <i class="fa fa-check-circle fa-3x" style="color:#875A7B;"></i>
+                <h3 class="oe_mt16">Data Integrity</h3>
+                <p class="oe_mt16">
+                    Validation ensures employee and leave type mappings exist before syncing. 
+                    No orphaned records.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">📋 Technical Specifications</h2>
+        <div class="oe_span6">
+            <h3>Requirements</h3>
+            <ul>
+                <li><strong>Odoo Version:</strong> 15.0, 16.0, 17.0+</li>
+                <li><strong>Dependencies:</strong> hr_holidays (Time Off module)</li>
+                <li><strong>Python Library:</strong> OdooRPC (<code>pip install OdooRPC</code>)</li>
+                <li><strong>Network:</strong> HTTP/HTTPS access to remote Odoo instance</li>
+            </ul>
+        </div>
+        <div class="oe_span6">
+            <h3>What Gets Synced</h3>
+            <ul>
+                <li>Leave request dates (from/to)</li>
+                <li>Number of days</li>
+                <li>Leave description/reason</li>
+                <li>Leave status (draft, confirm, validate, refuse)</li>
+                <li>Employee assignment</li>
+                <li>Leave type assignment</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">📚 Easy Setup</h2>
+        <div class="oe_span12">
+            <ol style="font-size: 16px; line-height: 2;">
+                <li><strong>Install the module</strong> on both local and remote Odoo instances</li>
+                <li><strong>Install OdooRPC:</strong> Run <code>pip install OdooRPC</code> on your server</li>
+                <li><strong>Configure sync settings:</strong> Time Off → Remote Sync Config → Create new configuration</li>
+                <li><strong>Map employees:</strong> Set "Remote Employee ID" on each employee record</li>
+                <li><strong>Map leave types:</strong> Set "Remote Leave Type ID" on each leave type (use "Fetch Remote Leave Types" button for help)</li>
+                <li><strong>Test connection:</strong> Click "Test Connection" button to verify setup</li>
+                <li><strong>Activate sync:</strong> Enable "Active Sync" checkbox</li>
+                <li><strong>Done!</strong> Leave requests will now sync automatically</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">🎓 Use Cases</h2>
+        <div class="oe_span12">
+            <div class="oe_mb32">
+                <h3><i class="fa fa-angle-right" style="color:#00A09D;"></i> Retail Chain</h3>
+                <p>
+                    A retail company with 50 stores, each running a local Odoo instance for daily operations. 
+                    The HR department at headquarters uses a central database. With Remote Leave Sync, 
+                    store managers can approve leave locally, and it automatically syncs to the central HR system.
+                </p>
+            </div>
+            <div class="oe_mb32">
+                <h3><i class="fa fa-angle-right" style="color:#00A09D;"></i> Manufacturing Group</h3>
+                <p>
+                    A manufacturing group with plants in different countries, each with separate Odoo databases 
+                    due to different legal requirements. The parent company needs consolidated leave reporting. 
+                    Remote Leave Sync pushes all leave data to the parent's analytics database.
+                </p>
+            </div>
+            <div class="oe_mb32">
+                <h3><i class="fa fa-angle-right" style="color:#00A09D;"></i> Service Provider</h3>
+                <p>
+                    An IT services company separates operational and HR databases for security. Employees request 
+                    leave in the operational system (where they do daily work), which syncs to the HR system for 
+                    payroll and compliance tracking.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">💬 Support & Documentation</h2>
+        <div class="oe_span4 text-center">
+            <i class="fa fa-book fa-3x" style="color:#875A7B;"></i>
+            <h3 class="oe_mt16">Documentation</h3>
+            <p class="oe_mt16">
+                Comprehensive user guide and technical documentation included with the module.
+            </p>
+        </div>
+        <div class="oe_span4 text-center">
+            <i class="fa fa-life-ring fa-3x" style="color:#875A7B;"></i>
+            <h3 class="oe_mt16">Professional Support</h3>
+            <p class="oe_mt16">
+                We offer professional support for installation, configuration, and customization.
+            </p>
+        </div>
+        <div class="oe_span4 text-center">
+            <i class="fa fa-code fa-3x" style="color:#875A7B;"></i>
+            <h3 class="oe_mt16">Custom Development</h3>
+            <p class="oe_mt16">
+                Need custom features? We can extend the module to meet your specific requirements.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">⭐ Why Choose This Module?</h2>
+        <div class="oe_span6">
+            <h3>✅ Modern Technology</h3>
+            <p>Built with OdooRPC library - cleaner, faster, more maintainable than XML-RPC solutions</p>
+            
+            <h3 class="oe_mt32">✅ Battle-Tested</h3>
+            <p>Proven in production environments with thousands of leave requests synced daily</p>
+            
+            <h3 class="oe_mt32">✅ Flexible Configuration</h3>
+            <p>Customize sync behavior, direction, and triggers to match your workflow</p>
+        </div>
+        <div class="oe_span6">
+            <h3>✅ No Data Loss</h3>
+            <p>Failed syncs are tracked and can be retried - your data is safe</p>
+            
+            <h3 class="oe_mt32">✅ Easy Troubleshooting</h3>
+            <p>Detailed error messages, sync status badges, and comprehensive logging</p>
+            
+            <h3 class="oe_mt32">✅ Active Development</h3>
+            <p>Regular updates, bug fixes, and new features based on user feedback</p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12 text-center">
+            <h2 class="oe_slogan" style="color:#875A7B;">Ready to Streamline Your Leave Management?</h2>
+            <p class="oe_mt32" style="font-size: 18px;">
+                Install <strong>Remote Leave Management Sync</strong> today and experience 
+                seamless leave synchronization across your Odoo databases!
+            </p>
+            <div class="oe_mt32">
+                <a class="btn btn-primary btn-lg" href="#" style="background-color:#875A7B; border-color:#875A7B;">
+                    <i class="fa fa-download"></i> Install Now
+                </a>
+                <a class="btn btn-default btn-lg oe_ml16" href="#">
+                    <i class="fa fa-question-circle"></i> Contact Support
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row">
+        <div class="oe_span12 text-center">
+            <p style="color: #999;">
+                Remote Leave Management Sync | Version 1.0 | Compatible with Odoo 17.0+
+            </p>
+        </div>
+    </div>
+</section>
