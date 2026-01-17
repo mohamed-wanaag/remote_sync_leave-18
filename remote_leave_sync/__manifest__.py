@@ -5,7 +5,7 @@
     'author': 'Wanaag Solutions',
     'website': 'https://wanaag.odoo.com/',
     'license': 'OPL-1',
-    'price': '249.99',
+    'price': '30',
     'currency': 'USD',
     'support': 'backend@wanaag.co.ke',
     'summary': 'Synchronize employee leave requests with remote Odoo database using OdooRPC',
